@@ -9,7 +9,7 @@ const postRouter=require('./routes/post.route');
 // built-in express middlewares / appllication level
 app.use(express.json());
 app.use(cors());
-// app.use(postRouter);
+app.use(postRouter);
 
 
  // router middlewares
