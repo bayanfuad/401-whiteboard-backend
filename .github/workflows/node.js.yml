@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main","lab-04" ]
+    branches: [ "main ]
   pull_request:
-    branches: [ "main","lab-04" ]
+    branches: [ "main" ]
 env:
 DATABASE_URL: postgres://rlhnwefhxlhnwz:5916e05834de523c28fa9b292ececd35713b4db24df978952e0b60bf0a664a80@ec2-52-30-75-37.eu-west-1.compute.amazonaws.com:5432/das7453pp0mrrq
 
