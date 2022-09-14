@@ -5,12 +5,13 @@ const app = express();
 const {errorHandler}= require('./error-handlers/500')
 const {handleNotFoundError}=require('./error-handlers/404');
 const postRouter=require('./routes/post.route');
+const commentRouter=require('./routes/comment.route');
 
 // built-in express middlewares / appllication level
 app.use(express.json());
 app.use(cors());
 app.use(postRouter);
-
+app.use(commentRouter);
 
  // router middlewares
 app.get('/',handleHome);
