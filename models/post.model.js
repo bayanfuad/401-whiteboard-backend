@@ -8,11 +8,11 @@ const Post = (sequelize, DataTypes) => sequelize.define('Post', {
   ,
   postContent: {
     type: DataTypes.STRING,
-  },
-  showContent: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
   }
+  // showContent: {
+  //   type: DataTypes.BOOLEAN,
+  //   defaultValue: true
+  // }
 })
 
 module.exports = Post;

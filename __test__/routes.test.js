@@ -21,7 +21,7 @@ describe('testing the CRUD methods', () => {
         const data = {
             postTitle:"Welcome",
             postContent:"first post" ,
-            showContent: true
+            // showContent: true
         }
         let res = await req.post('/post').send(data);
         expect(typeof res.body).toEqual('object');
@@ -34,7 +34,7 @@ describe('testing the CRUD methods', () => {
         const data = {
             postTitle:"Hello",
             postContent:"Let's start the journey",
-            showContent: false
+            // showContent: false
         }
         let res = await req.put('/post/4').send(data);
         expect(typeof res.body).toEqual('object');
