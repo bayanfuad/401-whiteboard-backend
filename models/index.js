@@ -22,16 +22,27 @@ const commentModel = comment(sequelize,DataTypes);
 
 const userModel = user(sequelize, DataTypes);
 
-postModel.hasMany(commentModel, {foreignKey: 'ownerID', sourceKey: 'id'});
-commentModel.belongsTo(postModel, {foreignKey: 'ownerID', targetKey: 'id'});
+postModel.hasMany( commentModel, { foreignKey: 'postID', sourceKey: 'id' } );
+commentModel.belongsTo( postModel, { foreignKey: 'postID', targetKey: 'id' } );
+
+userModel.hasMany( postModel, { foreignKey: 'userID', sourceKey: 'id' } );
+postModel.belongsTo( userModel, { foreignKey: 'userID', targetKey: 'id' } );
+
+userModel.hasMany( commentModel, { foreignKey: 'userID', sourceKey: 'id' } );
+commentModel.belongsTo( userModel, { foreignKey: 'userID', targetKey: 'id' } );
+
 
 const postCollection = new collection(postModel);
 const commentCollection =new collection(commentModel);
+const userCollection = new collection( userModel );
+
 
 module.exports = {
   db: sequelize,   //used in index.js
-  Post: postCollection, //used in routes
-  Comment:commentCollection,
-  CommentModel: commentModel,
-  UserModel: userModel
+ postCollection, //used in routes
+ commentCollection,
+ userCollection,
+ commentModel,
+ postModel,
+ userModel 
 }
